@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +39,12 @@
   a{color:inherit; text-decoration:none;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
 
+  /* background vector field */
   #field{
     position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.55;
   }
 
+  /* header */
   header{
     position:sticky; top:0; z-index:50;
     backdrop-filter:blur(10px);
@@ -71,6 +70,7 @@
 
   main{position:relative; z-index:1;}
 
+  /* hero */
   .hero{
     padding:120px 0 96px;
     position:relative;
@@ -108,6 +108,7 @@
   .btn.primary:hover{ box-shadow:0 0 24px var(--cyan-glow); transform:translateY(-1px);}
   .btn:not(.primary):hover{ border-color:var(--cyan); color:var(--cyan);}
 
+  /* section shell */
   section{padding:88px 0;}
   .section-head{
     display:flex; align-items:baseline; gap:16px; margin-bottom:40px;
@@ -118,6 +119,7 @@
     font-family:var(--display); font-weight:600; font-size:26px; letter-spacing:-0.01em;
   }
 
+  /* query index — signature interactive element */
   .index-panel{
     background:var(--bg-panel);
     border:1px solid var(--line);
@@ -152,6 +154,7 @@
   .chip:hover{border-color:var(--amber); color:var(--amber);}
   .chip.active{border-color:var(--cyan); color:var(--cyan); background:var(--cyan-glow);}
 
+  /* experience */
   .role{ margin-bottom:52px; }
   .role:last-child{margin-bottom:0;}
   .role-head{
@@ -185,12 +188,12 @@
   .bullet.dim{opacity:0.3;}
   mark{ background:var(--amber-glow); color:var(--amber); padding:0 2px; border-radius:3px; }
 
+  /* projects */
   .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media (max-width:760px){ .proj-grid{grid-template-columns:1fr;} }
   .proj-card{
     background:var(--bg-panel); border:1px solid var(--line); border-radius:var(--radius);
     padding:28px; transition:border-color .2s ease, transform .2s ease;
-    display:flex; flex-direction:column;
   }
   .proj-card:hover{border-color:var(--cyan); transform:translateY(-2px);}
   .proj-card h3{font-family:var(--display); font-size:18px; font-weight:600; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; gap:10px;}
@@ -201,10 +204,12 @@
     display:inline-flex; align-items:center; gap:6px; transition:color .2s ease;
     border-top:1px solid var(--line); padding-top:14px; margin-top:auto;
   }
+  .proj-card{display:flex; flex-direction:column;}
   .proj-link:hover{color:var(--cyan);}
   .proj-tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
   .proj-tags .tag{font-size:11px; padding:4px 9px;}
 
+  /* skills */
   .skill-groups{display:flex; flex-direction:column; gap:20px;}
   .skill-row{display:flex; gap:18px; flex-wrap:wrap; align-items:baseline;}
   .skill-cat{
@@ -219,6 +224,7 @@
     background:var(--bg-panel);
   }
 
+  /* two column: education + achievements */
   .two-col{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media (max-width:760px){ .two-col{grid-template-columns:1fr;} }
   .card{
@@ -236,8 +242,14 @@
   }
   .achieve-item:last-child{margin-bottom:0;}
   .achieve-item .n{font-family:var(--mono); color:var(--amber); flex-shrink:0;}
-  .cert-list{font-size:13.5px; color:var(--text-dim); line-height:1.8;}
+  .cert-list{font-size:13.5px; color:var(--text-dim); line-height:2;}
+  .cert-link{
+    color:var(--text-dim); border-bottom:1px solid var(--line);
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .cert-link:hover{color:var(--cyan); border-color:var(--cyan);}
 
+  /* footer */
   footer{
     border-top:1px solid var(--line); padding:56px 0 40px;
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
@@ -381,6 +393,7 @@
           <p>A multimodal desktop assistant built with Electron.js, Node.js, React, and LLMs — instant AI explanations from any captured screen region via a global keyboard shortcut.</p>
           <p>Low-latency floating UI using native macOS APIs, with local-first SQLite persistence for full data privacy and fast history retrieval.</p>
           <p>Shipped with GitHub Actions CI/CD and background auto-updates. Public launch, 15+ beta users, validated with feedback from senior engineers.</p>
+          <a class="proj-link" href="https://github.com/akshay3989/Open-source-AI-productivity-tool" target="_blank" rel="noopener">View on GitHub ↗</a>
         </div>
         <div class="proj-card">
           <h3>Real-Time Chat Application</h3>
@@ -390,6 +403,7 @@
           <p>A real-time chat platform using Socket.IO for one-to-one and group messaging, cutting message latency by 40% and improving engagement.</p>
           <p>JWT-based authentication and authorization protecting private chats and group data — a 100% reduction in unauthorized access incidents.</p>
           <p>Optimized Express.js REST APIs for user, message, and group operations, improving server response efficiency by 30%.</p>
+          <a class="proj-link" href="https://github.com/akshay3989/Chat-app-using-MERN-STACK/tree/master" target="_blank" rel="noopener">View on GitHub ↗</a>
         </div>
 
         <div class="proj-card">
@@ -485,20 +499,20 @@
           </div>
           <h3 style="margin-top:22px;">Certifications</h3>
           <div class="cert-list">
-            Google Cloud Computing Foundations Certificate<br>
-            Oracle Cloud Infrastructure — Generative AI Professional<br>
-            Oracle Cloud Infrastructure — Multicloud Architect Professional
+            <a href="https://www.credly.com/badges/9c051f8e-8020-483f-9173-c98301db4af2/public_url" target="_blank" rel="noopener" class="cert-link">Google Cloud Computing Foundations Certificate ↗</a><br>
+            <a href="https://drive.google.com/file/d/1MQViQNB5bSB0fAic-Y8oDowJ1CQH9z9j/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">Oracle Cloud Infrastructure — Generative AI Professional ↗</a><br>
+            <a href="https://drive.google.com/file/d/1ODtfLxwrCXLKyNkDB02mr7JCMb0IwmHX/view?usp=sharing" target="_blank" rel="noopener" class="cert-link">Oracle Cloud Infrastructure — Multicloud Architect Professional ↗</a>
           </div>
         </div>
         <div class="card">
           <h3>Achievements</h3>
           <div class="achieve-item">
             <span class="n">200+</span>
-            <span>LeetCode problems solved, focused on data structures and algorithms.</span>
+            <span><a href="https://leetcode.com/u/akshay252001/" target="_blank" rel="noopener" class="cert-link">LeetCode problems solved ↗</a>, focused on data structures and algorithms.</span>
           </div>
           <div class="achieve-item">
             <span class="n">JXU</span>
-            <span>Published research in the Journal of Xidian University — DOI: <a href="https://doi.org/10.37896/jxu18.7096" target="_blank" rel="noopener" style="color:var(--cyan); text-decoration:underline;">10.37896/jxu18.7096</a></span>
+            <span>Published research in the Journal of Xidian University — DOI: <a href="https://doi.org/10.37896/jxu18.7096" target="_blank" rel="noopener" class="cert-link">10.37896/jxu18.7096</a> · <a href="https://drive.google.com/file/d/1v8_Lm2mHAAMSPiv9QrsKii4lxaCzlJno/view" target="_blank" rel="noopener" class="cert-link">Full paper ↗</a></span>
           </div>
         </div>
       </div>
@@ -520,6 +534,7 @@
 </main>
 
 <script>
+// ---- ambient vector field background ----
 (function(){
   const canvas = document.getElementById('field');
   const ctx = canvas.getContext('2d');
@@ -557,6 +572,7 @@
   resize(); draw();
 })();
 
+// ---- query index: live relevance ranking over bullets ----
 (function(){
   const input = document.getElementById('queryInput');
   const chips = document.querySelectorAll('.chip');
@@ -630,5 +646,3 @@
 
 </body>
 </html>
-
-
