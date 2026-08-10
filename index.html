@@ -196,9 +196,18 @@
     padding:28px; transition:border-color .2s ease, transform .2s ease;
   }
   .proj-card:hover{border-color:var(--cyan); transform:translateY(-2px);}
-  .proj-card h3{font-family:var(--display); font-size:18px; font-weight:600; margin-bottom:12px;}
+  .proj-card h3{font-family:var(--display); font-size:18px; font-weight:600; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; gap:10px;}
   .proj-card p{font-size:14.5px; color:var(--text-dim); margin-bottom:10px;}
-  .proj-card p:last-of-type{margin-bottom:0;}
+  .proj-card p:last-of-type{margin-bottom:14px;}
+  .proj-link{
+    font-family:var(--mono); font-size:12px; color:var(--text-faint);
+    display:inline-flex; align-items:center; gap:6px; transition:color .2s ease;
+    border-top:1px solid var(--line); padding-top:14px; margin-top:auto;
+  }
+  .proj-card{display:flex; flex-direction:column;}
+  .proj-link:hover{color:var(--cyan);}
+  .proj-tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
+  .proj-tags .tag{font-size:11px; padding:4px 9px;}
 
   /* skills */
   .skill-groups{display:flex; flex-direction:column; gap:20px;}
@@ -373,15 +382,43 @@
       <div class="proj-grid">
         <div class="proj-card">
           <h3>Open Source AI Productivity Tool</h3>
+          <div class="proj-tags">
+            <span class="tag">Electron.js</span><span class="tag">React</span><span class="tag">SQLite</span><span class="tag">LLMs</span>
+          </div>
           <p>A multimodal desktop assistant built with Electron.js, Node.js, React, and LLMs — instant AI explanations from any captured screen region via a global keyboard shortcut.</p>
           <p>Low-latency floating UI using native macOS APIs, with local-first SQLite persistence for full data privacy and fast history retrieval.</p>
           <p>Shipped with GitHub Actions CI/CD and background auto-updates. Public launch, 15+ beta users, validated with feedback from senior engineers.</p>
         </div>
         <div class="proj-card">
           <h3>Real-Time Chat Application</h3>
+          <div class="proj-tags">
+            <span class="tag">Socket.IO</span><span class="tag">Express.js</span><span class="tag">JWT</span>
+          </div>
           <p>A real-time chat platform using Socket.IO for one-to-one and group messaging, cutting message latency by 40% and improving engagement.</p>
           <p>JWT-based authentication and authorization protecting private chats and group data — a 100% reduction in unauthorized access incidents.</p>
           <p>Optimized Express.js REST APIs for user, message, and group operations, improving server response efficiency by 30%.</p>
+        </div>
+
+        <div class="proj-card">
+          <h3>Closet Scanner App</h3>
+          <div class="proj-tags">
+            <span class="tag">SwiftUI</span><span class="tag">RoomPlan</span><span class="tag">ARKit</span><span class="tag">RealityKit</span><span class="tag">LiDAR</span>
+          </div>
+          <p>An iOS app that scans a closet with LiDAR and RoomPlan, reconstructs the space in real time, and digitally hides detected contents to isolate the empty storage volume.</p>
+          <p>Calculates width, depth, and height from the 3D reconstruction and validates them against manual tape-measure readings using mean absolute error across repeated scans.</p>
+          <p>Built as a live-demo technical interview challenge — designed to run end-to-end on-device on a LiDAR-equipped iPhone.</p>
+          <a class="proj-link" href="https://github.com/akshay3989/Closet-Scanner-App" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+
+        <div class="proj-card">
+          <h3>TwinMind Live Suggestions</h3>
+          <div class="proj-tags">
+            <span class="tag">Groq Whisper</span><span class="tag">Llama 3.3 70B</span><span class="tag">Vanilla JS</span>
+          </div>
+          <p>A real-time AI meeting copilot that transcribes live audio and surfaces 3 contextual suggestions every 30 seconds — answers, fact-checks, clarifications, and talking points.</p>
+          <p>Tuned prompt context windows separately for suggestions, expanded detail, and chat, and used strict JSON output so the UI can color-code and render cards without extra API calls.</p>
+          <p>Zero-build frontend deployed to Netlify, with the Groq API key kept client-side for a fast, backend-free demo.</p>
+          <a class="proj-link" href="https://github.com/akshay3989/TwinMind" target="_blank" rel="noopener">View on GitHub ↗</a>
         </div>
       </div>
     </div>
